@@ -136,6 +136,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
 			</form>
 
 			<p class="my-1">
+				<a href="https://wa.me/9168655298?text=I%20Forgot%20my%20password..%20pls.">Forgot Password?
+				</a>
+			</p>
+
+			<p class="my-1">
 				Don't have an account? <a href="register.php">Sign Up</a>
 			</p>
 

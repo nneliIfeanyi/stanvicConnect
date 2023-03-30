@@ -91,6 +91,7 @@ if (mysqli_num_rows($query) > 0) {
 	$date = $result['date'];
 	$category = $result['category'];
 	$image = $result['img'];
+	$condition = $result['cond_tion'];
 ?>
 
 <div class="w3-row-padding w3-center w3-card-2 w3-border w3-margin-bottom">
@@ -101,6 +102,7 @@ if (mysqli_num_rows($query) > 0) {
 	<ul class="w3-ul w3-margin">
 		<li class="w3-xlarge w3-padding-small"><?="$title $model $category"?></li>
 		<li class="w3-padding-small">
+			<span class="w3-small">Condition..&nbsp;</span><span class="w3-grey w3-padding-small"><?=$condition?></span><br>
 		<span class="w3-xlarge"><b>&#8358;<?=$price?>.00</b></span>
 		</li>
 		<li class="w3-padding-small">Posted by <?=$owner?><br>On <?=$date?></li>

@@ -9,7 +9,7 @@ if (check_login($data)) {
 	$owner = $user_data['username'];
 
 	    //Form validation variables..
-	$titleErr = $modelErr = $categoryErr = $imgErr = $priceErr = "";
+	$titleErr = $modelErr = $categoryErr = $conditionErr = $imgErr = $priceErr = "";
 	$title = $model = $category = $price = $msg2 = $msg = '';
 
 	if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
@@ -17,6 +17,7 @@ if (check_login($data)) {
 	    $title = mysqli_real_escape_string($data, htmlspecialchars($_POST['title'], ENT_QUOTES, 'utf-8'));
 	    $model = mysqli_real_escape_string($data, htmlspecialchars($_POST['model'], ENT_QUOTES, 'utf-8'));
 	    $category = mysqli_real_escape_string($data, htmlspecialchars($_POST['category'], ENT_QUOTES, 'utf-8'));
+	    $condition = mysqli_real_escape_string($data, htmlspecialchars($_POST['condition'], ENT_QUOTES, 'utf-8'));
 	    $price = mysqli_real_escape_string($data, htmlspecialchars($_POST['price'], ENT_QUOTES, 'utf-8'));
 
 	    $image_file = $_FILES['asset_pic']['name'];
@@ -42,13 +43,16 @@ if (check_login($data)) {
         }elseif (empty($model)) {
         $modelErr = "Input model number"; 
 
+        }elseif (empty($condition)) {
+        $conditionErr = "Select condition of Asset"; 
+
         }elseif (empty($price)) {
          $priceErr = "Put price na !"; 
        
 
         }else{
 
-        $sql = "INSERT INTO assets (category,title,model,price,owner_id,owner,img) VALUES ('$category','$title','$model','$price','$owner_id','$owner','$db_image_file')";
+        $sql = "INSERT INTO assets (category,title,model,price,owner_id,owner,img,cond_tion) VALUES ('$category','$title','$model','$price','$owner_id','$owner','$db_image_file','$condition')";
 	    $query = mysqli_query($data, $sql);
 
 
@@ -168,7 +172,21 @@ if (check_login($data)) {
         </div>
 
 				<div class="form-group w3-margin-top">
-					<input type="text" placeholder="* which phone" name="title" value="<?=$title?>" />
+					<select name="title">
+					<option value="">Which Phone</option>
+					<option value="Samsung">Samsung</option>
+					<option value="Huawei">Huawei</option>
+					<option value="Apple">iPhone</option>
+					<option value="Oppo">Oppo</option>
+					<option value="Sony">Sony</option>
+					<option value="Vivo">Vivo</option>
+					<option value="Gionee">Gionee</option>
+					<option value="Infinix">Infinix</option>
+					<option value="Tecno">Tecno</option>
+					<option value="Samsung(copy)">Samsung(copy)</option>
+					<option value="Alcatel">Alcatel</option>
+					<option value="Itel">Itel</option>
+					</select>
 
 					<?php
 
@@ -182,13 +200,30 @@ if (check_login($data)) {
 				</div>
 
 				<div class="form-group">
-					<input type="text" placeholder="* Model Number" name="model" value="<?=$model?>" />
+					<input type="text" placeholder="Model Number" name="model" value="<?=$model?>" />
 					<?php
 
                     if (!empty($modelErr)) {
 
                     ?>
                      <span class="w3-small w3-padding-small w3-tag w3-red"><?= $modelErr ?></span>
+                     <?php
+                    }
+	                ?>
+				</div>
+
+				<div class="form-group">
+					<select name="condition">
+					<option value="">Condition</option>
+					<option value="Brand New">Brand New</option>
+					<option value="2nd Hand">2nd Hand</option>
+					</select>
+					<?php
+
+                    if (!empty($conditionErr)) {
+
+                    ?>
+                     <span class="w3-small w3-padding-small w3-tag w3-red"><?= $conditionErr ?></span>
                      <?php
                     }
 	                ?>

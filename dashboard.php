@@ -40,7 +40,7 @@ if (check_login($data)) {
 			</h1>
 
 			<p class="user">
-				<a href="update_image.php?id=<?=$id?>"><img src="<?=$pic?>" width="80px" hieght="85px"></a> Welcome <?=$user_data['username']?>
+				<a href="update_image.php?id=<?=$id?>"><img src="<?=$pic?>" width="90px" hieght="85px"></a> Welcome <?=$user_data['username']?>
 			</p>
 
 			<div class="dash-buttons">
@@ -150,6 +150,10 @@ if (check_login($data)) {
 						<td><?=$tribe?></td>
 						<th><?=$exp?></th>
 						<td><?=$birthday?></td>
+						<td>
+							<!--<a href="" class="w3-text-green w3-small">Edit</a>-->
+							<a href="create_profile.php" class="w3-text-green w3-small">Edit Profile</a>
+						</td>
 					</tr>
 				</tbody>
 
