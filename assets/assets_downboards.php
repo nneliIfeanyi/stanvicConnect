@@ -121,7 +121,7 @@ if (mysqli_num_rows($query) > 0) {
 	<div class="w3-half w3-padding-16">
 	<ul class="w3-ul w3-margin">
 		<li class="w3-xlarge w3-text-red w3-padding-small">Nothing here</li>
-		<div class=" w3-center w3-padding-small">Be the first to <a href="../add_asset.php" class="btn-primary">Upload</a></div>
+		<div class=" w3-center w3-padding-small">Be the first to <a href="add_asset.php" class="btn-primary">Upload</a></div>
 		</li>
 	</ul>
 	</div>

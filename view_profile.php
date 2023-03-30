@@ -48,7 +48,7 @@ $id = $_GET['id'];
 
 			<!--=== TOP ===-->
 			<div class="profile-top bg-primary p-2">
-				<img src="<?=$profile_pic?>" class="round-img my-1" />
+				<img src="<?=$profile_pic?>" class="w3-circle my-1" />
 
 				<h1 class="large"><?=$username?></h1>
 				<p class="lead"><?=$spot?></p>

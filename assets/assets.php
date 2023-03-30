@@ -34,7 +34,7 @@ include 'header.php';
 	<div class="w3-row-padding">
 		<div class="w3-col s9 m9 l9">
 		<h1 class="large text-primary">
-			Assets <b><span class="w3-small w3-text-teal w3-wide">(Finger Print)</span></b>
+			Recent Uploads <b><span class="w3-small w3-text-teal w3-wide">(All Categories)</span></b>
 		</h1>
 		</div>
 		<div class="w3-col s3 m3 l3">
@@ -49,14 +49,15 @@ include 'header.php';
 		<ul class="w3-ul" style="border-top: none;">
 
 		<li class="w3-block w3-button"><a href="assets_panels.php" class="w3-hover-lightgrey w3-left-align w3-button w3-block"><i>Assets (Panels)</i></a></li>
+		<li class="w3-block w3-button"><a href="assets_lcd.php" class="w3-hover-lightgrey w3-left-align w3-button w3-block"><i>Assets (L.C.D)</i></a></li>
 
 		<li class=" w3-block w3-button"><a href="assets_simtray.php" class="w3-hover-lightgrey w3-left-align w3-button w3-block"><i>Assets (Sim Tray)</i></a></li>
 
 		<li class="w3-block w3-button"><a href="assets_downboards.php" class="w3-hover-lightgrey w3-left-align w3-button w3-block"><i>Assets (Down Boards)</i></a></li>
 
-		<li class="w3-block w3-button"><a href="assets_cameras.php" class="w3-hover-lightgrey w3-left-align w3-button w3-block"><i>Assets (Cameras)</i></a></li>
+		<li class="w3-block w3-button"><a href="assets_fingerprint.php" class="w3-hover-lightgrey w3-left-align w3-button w3-block"><i>Assets (Finger Print)</i></a></li>
 
-		<li class="w3-block w3-button"><a href="assets_lcd.php" class="w3-hover-lightgrey w3-left-align w3-button w3-block"><i>Assets (L.C.D)</i></a></li>
+		<li class="w3-block w3-button"><a href="assets_cameras.php" class="w3-hover-lightgrey w3-left-align w3-button w3-block"><i>Assets (Cameras)</i></a></li>
 		<li class="w3-block w3-button"><a href="others.php" class="w3-hover-lightgrey w3-left-align w3-button w3-block"><i>Assets (Others)</i></a></li>
 		</ul>
 		</div>
@@ -78,7 +79,7 @@ include 'header.php';
 	</div>
 <?php
 
-$sql = "SELECT * FROM assets WHERE category = 'Finger Print' ORDER BY id DESC";
+$sql = "SELECT * FROM assets ORDER BY id DESC";
 $query = mysqli_query($data, $sql);
 if (mysqli_num_rows($query) > 0) {
 

@@ -37,7 +37,7 @@
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.php">
             <span>
-              Stanvic
+            GSMvillage
             </span>
           </a>
           
@@ -80,7 +80,7 @@
                 <div class="col-md-6 ">
                   <div class="detail_box">
                     <h1>
-                       G.S.M COMMUNITY
+                       PHONE REPAIR COMMUNITY
                     </h1>
                     <p>
                       Create a profile, upload your assets & hook up with fellow engineers 
@@ -132,7 +132,7 @@
                 <div class="col-md-6 ">
                   <div class="detail_box">
                     <h1>
-                     SULEJA BASED
+                     UNITED WE STAND
                     </h1>
                     <p>
                       Strictly for us Engineers; an online GSM Villa. 
@@ -221,7 +221,7 @@
              <a href="assets/assets_downboards.php" class="btn-1">
                Browse
              </a>
-             <a href="add_asset.php" class="btn-2">
+             <a href="assets/add_asset.php" class="btn-2">
                Upload
              </a>
            </div>
@@ -240,7 +240,7 @@
              <a href="assets/assets_cameras.php">
                Browse
              </a>
-             <a href="add_asset.php" class="btn-2">
+             <a href="assets/add_asset.php" class="btn-2">
                Upload
              </a>
            </div>
@@ -259,7 +259,7 @@
              <a href="assets/assets_simtray.php">
                Browse
              </a>
-             <a href="add_asset.php" class="btn-2">
+             <a href="assets/add_asset.php" class="btn-2">
                Upload
              </a>
            </div>
@@ -278,7 +278,7 @@
              <a href="assets/assets_fingerprint.php">
                Browse
              </a>
-             <a href="add_asset.php" class="btn-2">
+             <a href="assets/add_asset.php" class="btn-2">
                Upload
              </a>
            </div>
@@ -297,7 +297,7 @@
              <a href="assets/assets_panels.php">
                Browse
              </a>
-             <a href="add_asset.php" class="btn-2">
+             <a href="assets/add_asset.php" class="btn-2">
                Upload
              </a>
            </div>
@@ -316,7 +316,7 @@
              <a href="assets/assets_lcd.php">
                Browse
              </a>
-             <a href="add_asset.php" class="btn-2">
+             <a href="assets/add_asset.php" class="btn-2">
                Upload
              </a>
            </div>
@@ -335,12 +335,14 @@
              <a href="others.php">
                Browse
              </a>
-             <a href="add_asset.php" class="btn-2">
+             <a href="assets/add_asset.php" class="btn-2">
                Upload
              </a>
            </div>
           </div>
         </div>
+  <button class="w3-button w3-black" onclick="plusDivs(-1)">&#10094;&#10094;</button>
+  <button class="w3-button w3-black" onclick="plusDivs(1)">&#10095;&#10095;</button>
         
       </div>
       
@@ -348,22 +350,25 @@
 
 
 
-    <script>
-      var myIndex = 0;
-      carousel();
+   <script>
+var slideIndex = 1;
+showDivs(slideIndex);
 
-      function carousel() {
-        var i;
-        var x = document.getElementsByClassName("mySlides");
-        for (i = 0; i < x.length; i++) {
-          x[i].style.display = "none";  
-        }
-        myIndex++;
-        if (myIndex > x.length) {myIndex = 1}    
-        x[myIndex-1].style.display = "block";  
-        setTimeout(carousel, 2000); // Change image every 2 seconds
-      }
-    </script>
+function plusDivs(n) {
+  showDivs(slideIndex += n);
+}
+
+function showDivs(n) {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  if (n > x.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = x.length}
+  for (i = 0; i < x.length; i++) {
+    x[i].style.display = "none";  
+  }
+  x[slideIndex-1].style.display = "block";  
+}
+</script>
   </section>
   <!-- end service section -->
 
@@ -649,7 +654,7 @@
                   <input type="text" class="form-control" id="inputName4" placeholder="Name ">
                 </div>
                 <div class="form-group col-md-6">
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email id">
+                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email ">
                 </div>
 
               </div>
@@ -714,7 +719,7 @@
           <div class="col-md-3">
             <div class="info_contact">
               <h4>
-                CONTACT Stanvic
+                CONTACT ADMIN
               </h4>
              
               <a href="">
@@ -766,7 +771,7 @@
       <div class="container">
         <p>
           &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://www.stanvic.com.ng">Stanvic_Concepts</a>
+         Stanvic_Concepts
         </p>
       </div>
     </section>

@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'conn.php';
+include '../conn.php';
 
 if (check_login($data)) {
 
@@ -24,8 +24,8 @@ if (check_login($data)) {
 	    $extension = end($file_nameArr);
 	    $ext = strtolower($extension);
 	    $unique_name = rand(100, 999).rand(100, 999).'.'.$ext;
-	    $image_folder = "assets/img/".$unique_name;
-	    $db_image_file = "assets/img/".$unique_name;
+	    $image_folder = "img/".$unique_name;
+	    $db_image_file = "img/".$unique_name;
 
 	    if (empty($image_file)) {
 
@@ -61,7 +61,7 @@ if (check_login($data)) {
 	        
 	        $msg = "<h2 class='w3-large w3-text-green'>Asset added successfully..</h2>";
 	        ?>
-	        <meta http-equiv="refresh" content="2; dashboard.php">
+	        <meta http-equiv="refresh" content="2; ../dashboard.php">
 
 	        <?php
 	        
@@ -80,8 +80,8 @@ if (check_login($data)) {
 		<meta name="description" content="" />
 		<meta name="author" content="Young Sam" />
 		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-		<link rel="stylesheet" type="text/css" href="stylesheets/w3.css" />
+		<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
+		<link rel="stylesheet" type="text/css" href="../stylesheets/w3.css" />
 		<title>Dashboard</title>
 	</head>
 
@@ -129,7 +129,7 @@ if (check_login($data)) {
 
 			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="form" enctype="multipart/form-data">
 
-				<label class="w3-text-orange w3-opacity-min w3-small">Add an Image for the Asset you are uploading..Not more than 250kb</label>
+				<label class="w3-text-orange w3-opacity-min w3-small">Add an Image for the Asset you are uploading..</label>
          <div class="w3-padding-small">
             <input type="file" name="asset_pic" style="background-color: white;">
          </div>

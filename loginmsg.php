@@ -25,7 +25,7 @@
         </div>
 
 
-<meta http-equiv="refresh" content="12; index.php">
+<meta http-equiv="refresh" content="7; index.php">
 </section>
 
 </body>

@@ -48,7 +48,7 @@ if (check_login($data)) {
 					<i class="fas fa-user-circle text-primary"></i> Edit Profile
 				</a>
 
-				<a href="add_asset.php" class="btn-light">
+				<a href="assets/add_asset.php" class="btn-light">
 					<i class="fab fa-black-tie text-primary"></i> Add Asset
 				</a>
 
@@ -85,7 +85,7 @@ if (check_login($data)) {
 					<tr>
 						<td><?=$phone . " " . $model?></td>
 						<td>
-						<a href="<?=$image?>"><img src="<?=$image?>" class="w3-circle" height="40" width="39"></a>
+						<a href="assets/<?=$image?>"><img src="assets/<?=$image?>" class="w3-circle" height="40" width="39"></a>
 						<?=$category?>
 						</td>
 						<td><?=$price?></td>

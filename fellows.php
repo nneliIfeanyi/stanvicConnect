@@ -58,8 +58,9 @@ if (check_login($data)) {
 	    	?>
 			<div class="profiles">
 				<div class="profile bg-light">
-					<img src="<?=$profile_pic?>" hieght="80px" width="80%" class="w3-circle" />
-
+					<div style="margin:auto;width: 100%;">
+					<img src="<?=$profile_pic?>" class="w3-circle" />
+					</div>
 					<div>
 						<h2><?=$username?></h2>
 						<p><?=$spot?></p>

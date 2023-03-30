@@ -81,7 +81,7 @@ $msg = "<h2 class='w3-large w3-text-green'>Successfull..</h2>";
 	<div>
 		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data"> 
 
-		<label class="w3-text-orange w3-opacity-min"><b>Not more than 250kb</b></label>
+		<label class="w3-text-orange w3-opacity-min w3-tiny"><b>Change profile pic.</b></label>
          <div class="w3-card w3-padding-small">
             <input type="file" name="profile_pic" style="background-color: white;">
          </div>

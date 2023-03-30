@@ -147,13 +147,15 @@ textarea{
 	margin: 1.5rem 0;
 }
 
-.profiles .round-img{
-	width: 100%;
+.profiles img{
+	width: 92%;
+	height: 220px;
 }
 
 .round-img{
 	border-radius: 50%;
 	width: 27%
+	height: 60px;
 }
 .icons img{
 	width: 18px;
@@ -523,32 +525,7 @@ th{
 	margin: .5rem 0 !important;
 }
 
-.profile-github{
-	grid-area: github;
-}
 
-.profile-github .repo{
-	display: flex;
-}
-
-.repo div:first-child{
-	flex: 7;
-	flex-basis: 70%;
-}
-
-.repo div:last-child{
-	flex: 3;
-	flex-basis: 20%;
-}
-
-.badge{
-	font-size: .8rem;
-	padding: .1rem !important;
-	text-align: center;
-	margin: .3rem !important;
-	color: #333;
-	background: #f4f4f4;
-}
 
 .badge-primary{
 	background: #17a2b8;

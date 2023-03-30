@@ -162,16 +162,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
 				</div>
 
 				<div class="form-group">
-					<select name="spot">
-					<option value="">Your Block</option>
-					<option value="Block A Murada Plaza Suleja">Block A</option>
-					<option value="Block B Murada Plaza Suleja">Block B</option>
-					<option value="Block C Murada Plaza Suleja">Block C</option>
-					<option value="Opposite Block A Murada Plaza Suleja">Opposite Block A</option>
-					<option value="Opposite Block B Murada Plaza Suleja">Opposite Block B</option>
-					<option value="Opposite Block C Murada Plaza Suleja">Opposite Block C</option>
-					<option value="Elsewhere Suleja">Elsewhere</option>
-					</select>
+					<input type="text" name="spot" placeholder="Workshop Address">
 					<?php
 
 					if (!empty($spotErr)) {
