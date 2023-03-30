@@ -97,7 +97,7 @@ if (mysqli_num_rows($query) > 0) {
 
 <div class="w3-row-padding w3-center w3-card-2 w3-border w3-margin-bottom">
 	<div class="w3-half w3-padding-large w3-padding-16">
-		<img src="<?=$image?>" class="w3-image" height="200px" width="65%">
+		<a href="<?=$image?>"><img src="<?=$image?>" height="170px" width="65%"></a>
 	</div>
 	<div class="w3-half w3-padding-16">
 	<ul class="w3-ul w3-margin">

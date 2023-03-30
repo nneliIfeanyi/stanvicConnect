@@ -8,10 +8,11 @@
 				</a>
 			</h1>
 
-			<ul class="w3-serif">
-				<li><a href="fellows.php"><b>FELLOWs</a></b></li>
-				<li><a href="assets/assets.php"><b>ASSETs</a></b></li>
-				<li><a href="index.php#contactLink"><b>sBOX</a></b></li>
+			<ul class="w3-serif w3-small">
+				<li><a href="fellows.php"><b>Fellows</a></b></li>
+				<li><a href="assets/assets.php"><b>Assetss</a></b></li>
+				<li><a href="assets/dashboard.php"><b>Dashboard</a></b></li>
+				<li><a href="index.php#contactLink"><b>S.Box</a></b></li>
 				
 			</ul>
 		</nav>

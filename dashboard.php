@@ -85,7 +85,7 @@ if (check_login($data)) {
 					<tr>
 						<td><?=$phone . " " . $model?></td>
 						<td>
-						<a href="assets/<?=$image?>"><img src="assets/<?=$image?>" class="w3-circle" height="40" width="39"></a>
+						<a href="assets/<?=$image?>"><img src="assets/<?=$image?>" height="40" width="29"></a>
 						<?=$category?>
 						</td>
 						<td><?=$price?></td>

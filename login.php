@@ -22,6 +22,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
 			
 			$_SESSION['username'] = $username;
 			$msg2 = "Login Successful";
+			$cookie_name = $username;
+			$value = $username;
+			setcookie($cookie_name,$value,time()+ (86400 * 30), "/");
 			?>
 			<meta http-equiv="refresh" content="2; dashboard.php">
 			<?php
@@ -103,7 +106,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
 			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="form">
 
 				<div class="form-group">
-					<input type="text" name="username" placeholder="Email Address" />
+					<input type="text" name="username" placeholder="Username" />
 
 					<?php
 
