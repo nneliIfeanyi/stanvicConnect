@@ -2,14 +2,18 @@
 session_start();
 include 'conn.php';
 
-if (check_login($data)) {
-
-	$user_data = check_login($data);
-	$username = $user_data['username'];
 
 	    //Form validation variables..
 	$surnameErr = $namesErr = $tribeErr = $dayErr = $monthErr  = $expErr= "";
 	$tribe = $surname = $other_names = $exp = $day = $month = $msg2 = $msg = '';
+
+if (check_login($data)) {
+
+	$user_data = check_login($data);
+	$username = $user_data['username'];
+	$tribe = $user_data['tribe'];
+	$exp = $user_data['exp'];
+
 
 	if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
 	    
@@ -224,18 +228,18 @@ if (check_login($data)) {
 					<div class="w3-col s6 form-group">
 						<select id="" name="month">
 							<option value="">Month of Birth</option>
-							<option value="jan">January</option>
-							<option value="feb">February</option>
-							<option value="mar">March</option>
-							<option value="apr">April</option>
-							<option value="may">May</option>
-							<option value="jun">June</option>
-							<option value="jul">July</option>
-							<option value="aug">August</option>
-							<option value="sep">September</option>
-							<option value="nov">October</option>
-							<option value="may">November</option>
-							<option value="dec">December</option>
+							<option value="Jan">January</option>
+							<option value="Feb">February</option>
+							<option value="Mar">March</option>
+							<option value="Apr">April</option>
+							<option value="May">May</option>
+							<option value="Jun">June</option>
+							<option value="Jul">July</option>
+							<option value="Aug">August</option>
+							<option value="Sep">September</option>
+							<option value="Oct">October</option>
+							<option value="Nov">November</option>
+							<option value="Dec">December</option>
 						</select>
 						  <?php
 

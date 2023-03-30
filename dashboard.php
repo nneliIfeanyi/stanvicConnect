@@ -60,7 +60,6 @@ if (check_login($data)) {
 				<thead>
 					<tr>
 						<th>Phone</th>
-						<th>Model</th>
 						<th>category</th>
 						<th>Price</th>
 						
@@ -79,13 +78,16 @@ if (check_login($data)) {
     				$model=$result['model'];
     				$price=$result['price'];
     				$date = $result['date'];
+    				$image = $result['img'];
     				$total = total_assets($data,$username);
 	    		?>
 				<tbody>
 					<tr>
-						<td><?=$phone?></td>
-						<td><?=$model?></td>
-						<td><b><?=$category?></b></td>
+						<td><?=$phone . " " . $model?></td>
+						<td>
+						<a href="<?=$image?>"><img src="<?=$image?>" class="w3-circle" height="40" width="39"></a>
+						<?=$category?>
+						</td>
 						<td><?=$price?></td>
 						<td>
 							<!--<a href="" class="w3-text-green w3-small">Edit</a>-->
@@ -109,7 +111,7 @@ if (check_login($data)) {
 				?>
 			
 					<tr>
-						<th colspan="3">You worth about</th>
+						<th colspan="2">You worth about</th>
 						
 						<th>&#8358;<?=$total;?>.00</th>
 						

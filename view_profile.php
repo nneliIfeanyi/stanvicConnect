@@ -120,7 +120,7 @@ $id = $_GET['id'];
 				?>
 				
 			</table>
-			<div class=" w3-center"><a href="tel:+234<?=$fone?>" class="btn-primary">Hook Up with <?=$username?></a></div>
+			<div class=" w3-center"><a href="tel:+234<?=$fone?>" class="btn-primary">Give <?=$username?> a call</a></div>
 			 
 	</section>	
 

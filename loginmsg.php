@@ -18,10 +18,14 @@
         <h1 class="w3-wide w3-red w3-medium w3-card-4">MESSAGE!</h1>
 
         <p class="w3-text-green w3-large w3-padding-32" style="line-height: 2.4rem;"><b>You need first create an acount or <br>login to your account to continue.</b></p>
+<div class="buttons">
+<a href="index2.php" class="btn-primary">Continue</a>
+
+ </div>
         </div>
 
 
-<meta http-equiv="refresh" content="5; index.php">
+<meta http-equiv="refresh" content="12; index.php">
 </section>
 
 </body>

@@ -9,7 +9,7 @@ if (check_login($data)) {
 	$owner = $user_data['username'];
 
 	    //Form validation variables..
-	$titleErr = $modelErr = $categoryErr = $priceErr = "";
+	$titleErr = $modelErr = $categoryErr = $imgErr = $priceErr = "";
 	$title = $model = $category = $price = $msg2 = $msg = '';
 
 	if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
@@ -19,9 +19,21 @@ if (check_login($data)) {
 	    $category = mysqli_real_escape_string($data, htmlspecialchars($_POST['category'], ENT_QUOTES, 'utf-8'));
 	    $price = mysqli_real_escape_string($data, htmlspecialchars($_POST['price'], ENT_QUOTES, 'utf-8'));
 
-	    if (empty($category)) {
+	    $image_file = $_FILES['asset_pic']['name'];
+	    $file_nameArr = explode(".", $image_file);
+	    $extension = end($file_nameArr);
+	    $ext = strtolower($extension);
+	    $unique_name = rand(100, 999).rand(100, 999).'.'.$ext;
+	    $image_folder = "assets/img/".$unique_name;
+	    $db_image_file = "assets/img/".$unique_name;
 
-        $categoryErr = "choose category..";
+	    if (empty($image_file)) {
+
+        $imgErr = "Add an Image for the Asset you are uploading..";
+
+        }elseif (empty($category)) {
+
+        $categoryErr = "Choose Asset Category..";
 
         }elseif (empty($title)) {
 
@@ -36,7 +48,7 @@ if (check_login($data)) {
 
         }else{
 
-        $sql = "INSERT INTO assets (category,title,model,price,owner_id,owner) VALUES ('$category','$title','$model','$price','$owner_id','$owner')";
+        $sql = "INSERT INTO assets (category,title,model,price,owner_id,owner,img) VALUES ('$category','$title','$model','$price','$owner_id','$owner','$db_image_file')";
 	    $query = mysqli_query($data, $sql);
 
 
@@ -45,6 +57,7 @@ if (check_login($data)) {
 	         $msg = "Something went wrong try again";
 
 	      }else{
+	      	move_uploaded_file($_FILES['asset_pic']['tmp_name'],$image_folder);
 	        
 	        $msg = "<h2 class='w3-large w3-text-green'>Asset added successfully..</h2>";
 	        ?>
@@ -87,9 +100,9 @@ if (check_login($data)) {
 				Showcase Your Asset.
 			</h1>
 
-			<p class="w3-small">
+			<!--<p class="w3-small">
 				It could be Working panels, LCDs, Down_boards etc.. 
-			</p>
+			</p>-->
 
 				<?php
 
@@ -114,27 +127,45 @@ if (check_login($data)) {
 				?>
 
 
-			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="form">
+			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="form" enctype="multipart/form-data">
 
-				<div class="w3-card w3-margin-top">
-                    <select id="" name="category" class="w3-text-dark-grey w3-select">
-                      <option value="">Select category--</option>
-                      <option value="panel">Working Panel</option>
-                      <option value="lcd">Screen | LCD</option>
-                      <option value="d_board">D_Board</option>
-                      <option value="phone">Working Phone</option>
-                      <option value="others">Others</option>
-                    </select>
-                    <?php
+				<label class="w3-text-orange w3-opacity-min w3-small">Add an Image for the Asset you are uploading..Not more than 250kb</label>
+         <div class="w3-padding-small">
+            <input type="file" name="asset_pic" style="background-color: white;">
+         </div>
 
-                    if (!empty($categoryErr)) {
+          <?php
 
-                    ?>
-                     <span class="w3-small w3-tag w3-red"><?= $categoryErr ?></span>
-                     <?php
-                    }
-	                ?>
-                </div>
+            if (!empty($imgErr)) {
+
+            ?>
+             <span class="w3-small w3-padding-small w3-tag w3-red"><?= $imgErr ?></span>
+             <?php
+            }
+          ?>
+        
+
+				<div class="w3-margin-top">
+            <select id="" name="category" class="w3-text-dark-grey w3-select">
+              <option value="">Select category--</option>
+              <option value="Working Panel">Working Panel</option>
+              <option value="LCD">Screen | LCD</option>
+              <option value="Down board">Down Board</option>
+              <option value="Camera">Camera</option>
+               <option value="Sim Tray">Sim Tray</option>
+              <option value="Finger Print">Finger Print</option>
+              <option value="Others">Others</option>
+            </select>
+            <?php
+
+            if (!empty($categoryErr)) {
+
+            ?>
+             <span class="w3-small w3-padding-small w3-tag w3-red"><?= $categoryErr ?></span>
+             <?php
+            }
+          ?>
+        </div>
 
 				<div class="form-group w3-margin-top">
 					<input type="text" placeholder="* which phone" name="title" value="<?=$title?>" />
@@ -144,7 +175,7 @@ if (check_login($data)) {
                     if (!empty($titleErr)) {
 
                     ?>
-                     <span class="w3-small w3-tag w3-red"><?= $titleErr ?></span>
+                     <span class="w3-small w3-padding-small w3-tag w3-red"><?= $titleErr ?></span>
                      <?php
                     }
 	                ?>
@@ -157,7 +188,7 @@ if (check_login($data)) {
                     if (!empty($modelErr)) {
 
                     ?>
-                     <span class="w3-small w3-tag w3-red"><?= $modelErr ?></span>
+                     <span class="w3-small w3-padding-small w3-tag w3-red"><?= $modelErr ?></span>
                      <?php
                     }
 	                ?>
@@ -170,7 +201,7 @@ if (check_login($data)) {
                     if (!empty($priceErr)) {
 
                     ?>
-                     <span class="w3-small w3-tag w3-red"><?= $priceErr ?></span>
+                     <span class="w3-small w3-padding-small w3-tag w3-red"><?= $priceErr ?></span>
                      <?php
                     }
 	                ?>
