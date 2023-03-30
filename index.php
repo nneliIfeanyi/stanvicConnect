@@ -80,7 +80,7 @@
                 <div class="col-md-6 ">
                   <div class="detail_box">
                     <h1>
-                       PHONE REPAIR COMMUNITY
+                       MURADA COMMUNITY
                     </h1>
                     <p>
                       Create a profile, upload your assets & hook up with fellow engineers 
@@ -332,7 +332,7 @@
               Others
             </h5>
            <div class="btn-box">
-             <a href="others.php">
+             <a href="assets/others.php">
                Browse
              </a>
              <a href="assets/add_asset.php" class="btn-2">
@@ -648,13 +648,13 @@ function showDivs(n) {
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-8 mx-auto">
-            <form>
+           <form action="suggest.php" method="POST">
               <div class="form-row">
                 <div class="form-group col-md-6">
-                  <input type="text" class="form-control" id="inputName4" placeholder="Name ">
+                  <input type="text" class="form-control" placeholder="Name ">
                 </div>
                 <div class="form-group col-md-6">
-                  <input type="email" class="form-control" id="inputEmail4" placeholder="Email ">
+                  <input type="email" class="form-control"  placeholder="Email ">
                 </div>
 
               </div>
@@ -664,7 +664,7 @@ function showDivs(n) {
                 </div>
               </div>-->
               <div class="form-group">
-                <input type="text" class="form-control" id="inputMessage" placeholder="Message">
+                <input type="text" class="form-control" placeholder="Message">
               </div>
               <div class="d-flex justify-content-center">
                 <button type="submit" class="">Send</button>

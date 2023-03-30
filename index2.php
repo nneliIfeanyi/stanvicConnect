@@ -29,8 +29,11 @@
 		<section class="landing" style="background: url(images/pexels3.jpg) no-repeat center center/cover;">
 			<div class="dark-overlay">
 				<div class="inner-landing">
-					<h1 class=" lead w3-xlarge w3-padding-16"><b>PHONE REPAIRS COMMUNITY</b></h1>
-					<!--<p class="lead w3-serif large">G.S.M COMMUNITY</p>-->
+					<div class="x-large"><p class="w3-serif">Murada is Online</p>
+					<p class="lead">
+                      Create a profile, upload your assets & hook up with fellow engineers 
+                    </p>
+					</div>
 
 					<div class="buttons">
 						<a href="register.php" class="btn-primary">Join</a>

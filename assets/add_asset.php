@@ -133,9 +133,9 @@ if (check_login($data)) {
 
 			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="form" enctype="multipart/form-data">
 
-				<label class="w3-text-orange w3-opacity-min w3-small">Add an Image for the Asset you are uploading..</label>
+				<label class="w3-opacity-min w3-small">Add an Image for the Asset you are uploading.. Not more than 250kb.</label>
          <div class="w3-padding-small">
-            <input type="file" name="asset_pic" style="background-color: white;">
+            <input type="file" id="file-upload" name="asset_pic" style="background-color: white;">
          </div>
 
           <?php
@@ -184,6 +184,8 @@ if (check_login($data)) {
 					<option value="Infinix">Infinix</option>
 					<option value="Tecno">Tecno</option>
 					<option value="Samsung(copy)">Samsung(copy)</option>
+					<option value="iPhone(copy)">iPhone(copy)</option>
+					<option value="Nokia">Nokia</option>
 					<option value="Alcatel">Alcatel</option>
 					<option value="Itel">Itel</option>
 					</select>
@@ -242,10 +244,25 @@ if (check_login($data)) {
 	                ?>
 				</div>
 				<p class="w3-serif w3-small">Do ensure your Asset is in perfect working condition.</p>
-				<input type="submit" name="add_asset" class="btn-primary my-1" />
-				<a href="dashboard.php" class="btn-light my-1">Go Back</a>
+				<input type="submit" onclick="return VerifyUploadSizeIsOk()" name="add_asset"  class="btn-primary my-1" />
+
+				<a href="../dashboard.php" class="btn-light my-1">Go Back</a>
 			</form>
 		</section>
+
+		<script type="text/javascript">
+ 	function VerifyUploadSizeIsOk() {
+ 		var UploadFieldID = "file-upload";
+ 		var MaxSizeInBytes = 262144;
+ 		var fld = document.getElementById(UploadFieldID);
+ 		if (fld.files && fld.files.length == 1 && fld.files[0].size > MaxSizeInBytes) {
+
+ 			alert("Image size too large, The file must be less than 250kb");
+ 			return false;
+ 		}
+ 		return true;
+ 	}
+ </script>
 
 	</body>
 	</html>

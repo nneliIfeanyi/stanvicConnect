@@ -81,19 +81,35 @@ $msg = "<h2 class='w3-large w3-text-green'>Successfull..</h2>";
 	<div>
 		<form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" enctype="multipart/form-data"> 
 
-		<label class="w3-text-orange w3-opacity-min w3-tiny"><b>Change profile pic.</b></label>
+		<label class="w3-text-orange w3-opacity-min w3-tiny"><b>Change profile pic. Image size should not be more 250kb.</b></label>
          <div class="w3-card w3-padding-small">
-            <input type="file" name="profile_pic" style="background-color: white;">
+            <input type="file" id="file-upload" name="profile_pic" style="background-color: white;">
          </div>
          <span class="w3-small w3-tag w3-red"><?= $imgErr ?></span>
         
         <div class="w3-margin-bottom">
         	<input type="hidden" name="id" value="<?=$id?>">
-            <input type="submit" name="add" value="Add Profile Pic" class="w3-padding-small btn-primary w3-round-large">
+            <input type="submit" onclick="return VerifyUploadSizeIsOk()" name="add" value="Add Profile Pic" class="w3-padding-small btn-primary w3-round-large">
             <a href="dashboard.php" class="btn-light">goBack</a>
         </div>
 
         </form>
 	</div>
  </section>
+
+ <script type="text/javascript">
+ 	function VerifyUploadSizeIsOk() {
+ 		var UploadFieldID = "file-upload";
+ 		var MaxSizeInBytes = 262144;
+ 		var fld = document.getElementById(UploadFieldID);
+ 		if (fld.files && fld.files.length == 1 && fld.files[0].size > MaxSizeInBytes) {
+
+ 			alert("Image size too large, The file must be less than 250kb");
+ 			return false;
+ 		}
+ 		return true;
+ 	}
+ </script>
+</body>
+</html>
 	
