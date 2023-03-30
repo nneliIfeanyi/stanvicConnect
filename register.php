@@ -119,7 +119,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
 		  	if (!empty($msg2)) {
 
 		  		?>
-		  		<p class="user w3-text-green"><?= $msg2 ?></p>
+		  		<p class="user w3-text-green"><b><?= $msg2 ?></b></p>
 		  		<?php
 		  	}
 		 

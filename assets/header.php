@@ -4,7 +4,7 @@
 		<nav class="navbar bg-dark">
 			<h1>
 				<a href="../dashboard.php" style="color: white !important;">
-					<span class="w3-small">Murada</span><span class="w3-text-teal" style="font-weight: bolder;">Comunity</span>
+					<span class="w3-small">Murada</span><span class="w3-text-teal" style="font-weight: bolder;">Online</span>
 				</a>
 			</h1>
 

@@ -19,20 +19,21 @@ if (check_login($data)) {
 	    $category = mysqli_real_escape_string($data, htmlspecialchars($_POST['category'], ENT_QUOTES, 'utf-8'));
 	    $condition = mysqli_real_escape_string($data, htmlspecialchars($_POST['condition'], ENT_QUOTES, 'utf-8'));
 	    $price = mysqli_real_escape_string($data, htmlspecialchars($_POST['price'], ENT_QUOTES, 'utf-8'));
-
 	    $image_file = $_FILES['asset_pic']['name'];
-	    $file_nameArr = explode(".", $image_file);
-	    $extension = end($file_nameArr);
-	    $ext = strtolower($extension);
-	    $unique_name = rand(100, 999).rand(100, 999).'.'.$ext;
-	    $image_folder = "img/".$unique_name;
-	    $db_image_file = "img/".$unique_name;
+	    if ($image_file) {
+	    	$file_nameArr = explode(".", $image_file);
+	    	$extension = end($file_nameArr);
+	    	$ext = strtolower($extension);
+	    	$unique_name = rand(100, 999).rand(100, 999).'.'.$ext;
+	    	$image_folder = "img/".$unique_name;
+	    	$db_image_file = "img/".$unique_name;
 
-	    if (empty($image_file)) {
-
-        $imgErr = "Add an Image for the Asset you are uploading..";
-
-        }elseif (empty($category)) {
+	    }else{
+	    	$image_file = null;
+	    	$db_image_file = null;
+	    	$image_folder = null;
+	    }
+	    if (empty($category)) {
 
         $categoryErr = "Choose Asset Category..";
 
@@ -63,7 +64,7 @@ if (check_login($data)) {
 	      }else{
 	      	move_uploaded_file($_FILES['asset_pic']['tmp_name'],$image_folder);
 	        
-	        $msg = "<h2 class='w3-large w3-text-green'>Asset added successfully..</h2>";
+	        $msg = "<h2 class='w3-large w3-text-green'><b>Asset added successfully..</b></h2>";
 	        ?>
 	        <meta http-equiv="refresh" content="2; ../dashboard.php">
 
@@ -133,8 +134,8 @@ if (check_login($data)) {
 
 			<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="form" enctype="multipart/form-data">
 
-				<label class="w3-opacity-min w3-small">Add an Image for the Asset you are uploading.. Not more than 250kb.</label>
-         <div class="w3-padding-small">
+				<label class="w3-opacity-min w3-small"><span class="w3-text-blue">(Optional): </span>Add an Image for the Asset you are uploading.. Not more than 250kb.</label>
+         <div class="w3-padding-small w3-grey">
             <input type="file" id="file-upload" name="asset_pic" style="background-color: white;">
          </div>
 
@@ -217,8 +218,9 @@ if (check_login($data)) {
 				<div class="form-group">
 					<select name="condition">
 					<option value="">Condition</option>
-					<option value="Brand New">Brand New</option>
-					<option value="2nd Hand">2nd Hand</option>
+					<option value="2nd Hand(followCome)">2nd Hand(followCome)</option>
+					<option value="Brand New(marketOwn)">Brand New(marketOwn)</option>
+					<option value="2nd Hand(MarketOwn)">2nd Hand(MarketOwn)</option>
 					</select>
 					<?php
 

@@ -95,9 +95,18 @@ if (mysqli_num_rows($query) > 0) {
 ?>
 
 <div class="w3-row-padding w3-center w3-card-2 w3-border w3-margin-bottom">
-	<div class="w3-half w3-padding-large w3-padding-16">
-		<a href="<?=$image?>"><img src="<?=$image?>" height="170px" width="65%"></a>
-	</div>
+	<?php
+
+	  	if (!empty($image)) {
+
+	  		?>
+	  		<div class="w3-half w3-padding-large w3-padding-16">
+	  		<a href="<?=$image?>"><img src="<?=$image?>" height="190px" width="65%"></a>
+	  		</div>
+	  		<?php
+	  	}
+	 
+		?>
 	<div class="w3-half w3-padding-16">
 	<ul class="w3-ul w3-margin">
 		<li class="w3-xlarge w3-padding-small"><?="$title $model $category"?></li>

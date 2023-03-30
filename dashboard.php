@@ -84,10 +84,27 @@ if (check_login($data)) {
 				<tbody>
 					<tr>
 						<td><?=$phone . " " . $model?></td>
-						<td>
+						<?php
+					  	if (!empty($image)) {
+
+					  	?>
+					  	<td>
 						<a href="assets/<?=$image?>"><img src="assets/<?=$image?>" height="40" width="29"></a>
 						<?=$category?>
 						</td>
+					  	<?php
+					  	}else{
+
+					  		?>
+					  		<td>
+						
+							<?=$category?>
+							</td>
+					  		<?php
+					  	}
+					 
+						?>
+						
 						<td><?=$price?></td>
 						<td>
 							<!--<a href="" class="w3-text-green w3-small">Edit</a>-->
