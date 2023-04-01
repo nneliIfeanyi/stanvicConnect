@@ -6,10 +6,13 @@ $usenameErr = $phoneErr = $passErr = $confirmErr = $spotErr = $msg = $msg2 ="";
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
 	
-	$username = mysqli_real_escape_string($data, htmlspecialchars($_POST['username'], ENT_QUOTES, 'utf-8'));
+	$username1 = mysqli_real_escape_string($data, htmlspecialchars($_POST['username'], ENT_QUOTES, 'utf-8'));
+	$username2 = trim($username1);
+	$username = strtolower($username2);
 	$phone = mysqli_real_escape_string($data, htmlspecialchars($_POST['phone'], ENT_QUOTES, 'utf-8'));
-	$password = mysqli_real_escape_string($data, htmlspecialchars($_POST['password'], ENT_QUOTES, 'utf-8'));
+	$password1 = mysqli_real_escape_string($data, htmlspecialchars($_POST['password'], ENT_QUOTES, 'utf-8'));
 	$c_password =mysqli_real_escape_string($data, htmlspecialchars($_POST['comfirm_password'], ENT_QUOTES, 'utf-8'));
+	$password = md5($password1);
 	$spot =mysqli_real_escape_string($data, htmlspecialchars($_POST['spot'], ENT_QUOTES, 'utf-8'));
 	$avatar = "img/avatar_guy.png";
 	
@@ -25,11 +28,11 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
 
 		$spotErr = "Input your address..";
 		
-	}elseif (empty($password)) {
+	}elseif (empty($password1)) {
 		
 		$passErr = "Input password..";
 
-	}elseif (strlen($password) < 6) {
+	}elseif (strlen($password1) < 5) {
 			
 		$passErr = "Too short, password must be above 6 characters";
 
@@ -37,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
 		
 		$confirmErr = "kindly comfirm password..";
 
-	}elseif ($password !== $c_password) {
+	}elseif ($password1 !== $c_password) {
 			
 		$confirmErr = "Password does not match ..";
 

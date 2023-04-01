@@ -23,7 +23,8 @@ if (check_login($data)) {
 	    $day = mysqli_real_escape_string($data, htmlspecialchars($_POST['day'], ENT_QUOTES, 'utf-8'));
 	    $month = mysqli_real_escape_string($data, htmlspecialchars($_POST['month'], ENT_QUOTES, 'utf-8'));
 	    $exp = mysqli_real_escape_string($data, htmlspecialchars($_POST['experience'], ENT_QUOTES, 'utf-8'));
-	    $fullname = $surname . " " . $other_names;
+	    $fullname1 = $surname . " " . $other_names;
+	    $fullname = trim($fullname1);
 	    $birthday = $day . " " . "-" . " " . $month;
 	  
 	    if (empty($surname)) {
