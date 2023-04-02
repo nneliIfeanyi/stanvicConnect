@@ -67,7 +67,7 @@ if (check_login($data)) {
 				</thead>
 				<?php 
 
-	    		$sql = "SELECT * FROM assets WHERE owner_id = '$id' AND owner = '$username' ORDER BY id DESC";
+	    		$sql = "SELECT * FROM assets WHERE owner_id = '$id' ORDER BY id DESC";
 	    		$query = mysqli_query($data, $sql);
 	    		if (mysqli_num_rows($query) > 0) {
 

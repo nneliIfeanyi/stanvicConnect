@@ -50,7 +50,7 @@ if (check_login($data)) {
     		if (mysqli_num_rows($query) > 0) {
 
 			while ($result = mysqli_fetch_assoc($query)) {
-			$id = $result['id'];
+			$f_id = $result['id'];
 			$username=$result['username'];
 			$spot=$result['address'];
 			$date = $result['date'];
@@ -65,7 +65,7 @@ if (check_login($data)) {
 						<h2><?=$username?></h2>
 						<p><?=$spot?></p>
 						<p>Joined on <?=$date?></p>
-						<a href="view_profile.php?id=<?=$id?>" class="btn btn-primary">View Assets</a>
+						<a href="view_profile.php?id=<?=$f_id?>" class="btn btn-primary">View Assets</a>
 
 					</div>
 
