@@ -26,6 +26,7 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
+  <link rel="stylesheet" type="text/css" href="stylesheets/w3.css">
 </head>
 
 <body>
@@ -60,7 +61,7 @@
                   <a class="nav-link" href="fellows.php"> Fellows </a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link" href="#contactLink">S.Box</a>
+                  <a class="nav-link" href="blog.php">Blog</a>
                 </li>
               </ul>
             </div>
@@ -648,14 +649,8 @@ function showDivs(n) {
       <div class="container">
         <div class="row">
           <div class="col-lg-6 col-md-8 mx-auto">
-           <form action="suggest.php" method="POST">
+           <form action="blog.php" method="POST">
               <div class="form-row">
-                <div class="form-group col-md-6">
-                  <input type="text" class="form-control" placeholder="Name ">
-                </div>
-                <div class="form-group col-md-6">
-                  <input type="email" class="form-control"  placeholder="Email ">
-                </div>
 
               </div>
               <!--<div class="form-row">
@@ -664,10 +659,10 @@ function showDivs(n) {
                 </div>
               </div>-->
               <div class="form-group">
-                <input type="text" class="form-control" placeholder="Message">
+                <input type="text" class="form-control" name="post" placeholder="Message">
               </div>
               <div class="d-flex justify-content-center">
-                <button type="submit" class="">Send</button>
+               <input type="submit" name="submit" value="Submit" class="w3-yellow w3-round-large w3-padding" />
               </div>
             </form>
           </div>

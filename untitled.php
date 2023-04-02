@@ -24,6 +24,34 @@ if (!empty($blockErr)) {
 
 
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+if (isset($_POST['thumbs-up'])) {
+	
+	$post_id = $_POST['id'];
+	$likes2=1;
+	$sql2 = "UPDATE posts SET likes = '$likes2' WHERE id '$post_id'";
+	$query2 = mysqli_query($data,$sql2);
+	if ($query2) {
+		echo "liked";
+	}else{
+		echo "not working";
+	}
+
+	exit();
+	$sql="SELECT likes FROM posts WHERE id = '$post_id'";
+	$query = mysqli_query($data, $sql);
+	if (mysqli_num_rows($query) > 0) {
+	while ($result = mysqli_fetch_assoc($query)) {
+	$likes1 = $result['likes'];
+	$likes2 = $likes1+1;
+	echo "$likes2";
+	}
+	}
+
+}	
+
+
 		<!--<div class="line my-1"></div>
 		<h4 class="text-primary">Skills | Specialization</h4>
 		<div class="skills">
