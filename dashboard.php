@@ -72,7 +72,7 @@ if (check_login($data)) {
 	    		if (mysqli_num_rows($query) > 0) {
 
 	    			while ($result = mysqli_fetch_assoc($query)) {
-    				$id = $result['id'];
+    				$a_id = $result['id'];
     				$phone=$result['title'];
     				$category=$result['category'];
     				$model=$result['model'];
@@ -108,7 +108,7 @@ if (check_login($data)) {
 						<td><?=$price?></td>
 						<td>
 							<!--<a href="" class="w3-text-green w3-small">Edit</a>-->
-							<a href="delete.php?id=<?=$id?>" class="w3-text-red w3-small">Delete</a>
+							<a href="delete.php?id=<?=$a_id?>" class="w3-text-red w3-small">Delete</a>
 						</td>
 					</tr>
 				</tbody>
@@ -191,7 +191,7 @@ if (check_login($data)) {
 
 			</table></div>
 
-			<h2 class="my-2">Danger Zone</h2>
+		
 			<div class="my-2">
 				<div class="w3-margin-bottom"><a href="logout.php" class="btn-light">Logout</a></div>
 				<button class="btn-danger">
