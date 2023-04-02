@@ -111,10 +111,10 @@ if (isset($_POST['submit'])) {
 					?>
 					<div class="post bg-white p-1 my-1">
 						<div>
-							<a href="">
-								<img src="<?=$image?>" class="circle" />
-								<h4><?=$posted_by?></h4>
-							</a>
+						
+						<img src="<?=$image?>" class="circle" />
+						<h4><?=$posted_by?></h4>
+						
 						</div>
 
 						<div>

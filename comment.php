@@ -115,7 +115,7 @@ if (check_login($data)) {
 							<div>
 								<p class="my-1"><?=$comment?></p>
 
-								<a href="view_profile.php?id=<?=$by_id?>" class="btn-light"><span><b>By:</b></span><?=$_by?></a>
+								<a href="view_profile.php?id=<?=$by_id?>" class="btn-light"><b><?=$_by?></b></a>
 							</div>
 						</div>
 
