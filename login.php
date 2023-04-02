@@ -6,8 +6,11 @@ $usenameErr = $passErr =$msg2 = $msg = '';
 
 if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
 
-	$username = mysqli_real_escape_string($data, htmlspecialchars($_POST['username'], ENT_QUOTES, 'utf-8'));
+	$username1 = mysqli_real_escape_string($data, htmlspecialchars($_POST['username'], ENT_QUOTES, 'utf-8'));
+	$username2 = trim($username1);
+	$username = strtolower($username2);
 	$password = mysqli_real_escape_string($data, htmlspecialchars($_POST['password'], ENT_QUOTES, 'utf-8'));
+
 	if (empty($username)) {
 
 		$usernameErr = "Please kindly enter a username..";
