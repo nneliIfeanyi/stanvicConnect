@@ -11,19 +11,20 @@
 			<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
 			<link rel="stylesheet" type="text/css" href="../stylesheets/w3.css" />
 			<title>stanvicConnect</title>
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3978549732541247"
+     crossorigin="anonymous"></script>
 	</head>
 	<body class="w3-serif">
 		<!--=== NAVBAR ===-->
 
 		<nav class="navbar bg-dark">
 			<h1>
-				<a href="index.php" style="color: white !important;">
+				<a href="../index.php" style="color: white !important;">
 					<span class="w3-small w3-text-teal"><b>Stanvic</b></span>
 				</a>
 			</h1>
 
 			<ul class="w3-serif w3-small">
-				<li><a href="../fellows.php"><b>Fellows</a></b></li>
 				<li><a href="assets.php"><b>Assets</a></b></li>
 				<li><a href="../dashboard.php"><b>Dashboard</a></b></li>
 				<li><a href="../blog/blog.php"><b>Blog</a></b></li>

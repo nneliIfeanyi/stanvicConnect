@@ -11,6 +11,8 @@
 			<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
 			<link rel="stylesheet" type="text/css" href="stylesheets/w3.css" />
 			<title>stanvicConnect</title>
+			<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3978549732541247"
+     crossorigin="anonymous"></script>
 	</head>
 	<body class="w3-serif">
 		<!--=== NAVBAR ===-->
@@ -23,10 +25,23 @@
 			</h1>
 
 			<ul class="w3-serif w3-small">
-				<li><a href="fellows.php"><b>Fellows</a></b></li>
-				<li><a href="assets/assets.php"><b>Assets</a></b></li>
-				<li><a href="dashboard.php"><b>Dashboard</a></b></li>
-				<li><a href="blog/blog.php"><b>Blog</a></b></li>
+				<?php
+					if (isset($_SESSION['username'])) {
+					?>
+					<li><a href="assets/assets.php"><b>Assets</a></b></li>
+					<li><a href="dashboard.php"><b>Dashboard</a></b></li>
+					<li><a href="blog/blog.php"><b>Blog</a></b></li>
+					<?php
+					}else{
+					?>
+					<li><a href="register.php"><b>Register</a></b></li>
+
+					<li><a href="login.php"><b>Login</a></b></li>
+				
+					<?php
+					}
+					?>
+				
 				
 			</ul>
 		</nav>

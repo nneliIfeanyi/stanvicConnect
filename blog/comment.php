@@ -50,7 +50,7 @@ include 'header.php';
 				<div class="post bg-white p-1 my-1">
 							<div>
 						<a href="">
-							<img src="<?=$image?>" class="circle" />
+							<img src="../<?=$image?>" class="circle" />
 							<h4><?=$posted_by?></h4>
 						</a>
 					</div>
@@ -113,7 +113,7 @@ include 'header.php';
 				</div>
 
 				<?php
-				include 'footer.php';
+				include '../footer.php';
 				?>
 			</section>
 		</body>

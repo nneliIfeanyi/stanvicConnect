@@ -13,7 +13,7 @@ include'header.php';
 					<div class="x-large">
 						<p class="w3-serif">GSM<span class="w3-text-teal" style="font-weight: bolder;">connect</span></p>
 						<p class="lead">
-                      	Create a profile, upload your assets & hook up with fellows 
+                      	Create a profile, upload your assets, sell the good & the bad 
                     	</p>
 					</div>
 

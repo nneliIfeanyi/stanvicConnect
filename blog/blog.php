@@ -64,6 +64,7 @@ include 'header.php';
 				<div class="post-form-header bg-primary" id="post">
 					<h4>Say Something...</h4>
 				</div>
+				<p class="">This is a work in progress.. tell us how we can improve, your opinion does matter.</p>
 
 				<form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="POST" class="form my-1">
 					<textarea name="post" placeholder="Create A Post..." cols="30" rows="5"></textarea>
@@ -93,7 +94,7 @@ include 'header.php';
 					<div class="post bg-white p-1 my-1">
 						<div>
 						
-						<img src="<?=$image?>" class="circle" />
+						<img src="../<?=$image?>" class="circle" />
 						<h4><?=$posted_by?></h4>
 						
 						</div>
