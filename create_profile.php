@@ -256,7 +256,7 @@ if (check_login($data)) {
 
 
 				<div class="form-group">
-					<input type="number" name="experience" placeholder="years of experience" value="<?=$exp?>" />
+					<input type="text" name="experience" placeholder="Occupation" value="<?=$exp?>" />
 					<?php
 
             if (!empty($expErr)) {

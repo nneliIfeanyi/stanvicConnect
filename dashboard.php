@@ -9,28 +9,8 @@ if (check_login($data)) {
 	$username = $user_data['username'];
 	$pic = $user_data['img'];
 
-	?>
-
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keyword" content="" />
-		<meta name="description" content="" />
-		<meta name="author" content="Young Sam" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-		<link rel="stylesheet" type="text/css" href="stylesheets/w3.css" />
-		<title>Dashboard</title>
-	</head>
-	<body>
-
-		<!--=== NAVBAR ===-->
-		<?php
-
-			include 'header.php';
-		?>
+include 'header.php';
+?>
 
 		<!--=== CONTAINER ===-->
 
@@ -157,7 +137,7 @@ if (check_login($data)) {
 
 	    			while ($result = mysqli_fetch_assoc($query)) {
     				$fullname = $result['fullname'];
-    				$exp = $result['exp'] . "years";
+    				$exp = $result['exp'];
     				$birthday = $result['DOB'];
     				$tribe = $result['tribe'];
 	    		?>

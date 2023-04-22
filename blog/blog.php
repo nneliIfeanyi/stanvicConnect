@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'conn.php';
+include '../conn.php';
 
 if (check_login($data)) {
 
@@ -43,27 +43,8 @@ if (isset($_POST['submit'])) {
    
 }
 
-	?>
-
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keyword" content="" />
-		<meta name="description" content="" />
-		<meta name="author" content="Young Sam" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-		<link rel="stylesheet" type="text/css" href="stylesheets/w3.css" />
-		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-		<title>Suggestion Box</title>
-	</head>
-	<body>
-	<?php
-
-	include 'header.php';
-	?>
+include 'header.php';
+?>
 		
 
 	<section class="container">
@@ -72,7 +53,7 @@ if (isset($_POST['submit'])) {
 			</h1>
 
 			<p class="user">
-				<img src="img/avatar_guy.png"> Welcome to the community
+				<img src="../img/avatar_guy.png"> Welcome to the community
 			</p>
 
 			<p class="user w3-text-green">

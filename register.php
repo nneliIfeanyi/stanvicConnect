@@ -71,27 +71,9 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
 
 
 
+include'header.php';
+
 ?>
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keyword" content="" />
-			<meta name="description" content="" />
-			<meta name="author" content="Young Sam" />
-			<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-			<link rel="stylesheet" type="text/css" href="stylesheets/style.css" />
-			<link rel="stylesheet" type="text/css" href="stylesheets/w3.css" />
-			<title>Join stanvicConnect</title>
-	</head>
-	<body>
-
-		<?php
-
-			include'header.php';
-
-		?>
 
 
 		<!--=== CONTAINER ===-->
@@ -164,15 +146,20 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" ) {
 				</div>
 
 				<div class="form-group">
-					<select name="spot">
-					<option value="">Your Block</option>
-					<option value="Block A Murada Plaza Suleja">Block A</option>
-					<option value="Block B Murada Plaza Suleja">Block B</option>
-					<option value="Block C Murada Plaza Suleja">Block C</option>
-					<option value="Opposite Block A Murada Plaza Suleja">Opposite Block A</option>
-					<option value="Opposite Block B Murada Plaza Suleja">Opposite Block B</option>
-					<option value="Opposite Block C Murada Plaza Suleja">Opposite Block C</option>
-					<option value="Elsewhere Suleja">Elsewhere</option>
+					<select name="spot" id="state">
+					<option value="">Region</option>
+					<option value="Abaji">Abaji</option>
+					<option value="Kuje">Kuje</option>
+					<option value="Gwags">Gwagwalada</option>
+					<option value="Kubwa">Kubwa</option>
+					<option value="Bwari">Bwari</option>
+					<option value="Gwarimpa">Gwarimpa</option>
+					<option value="Dutse">Dutse</option>
+					<option value="Wuse">Wuse</option>
+					<option value="Dei dei">Dei die</option>
+					<option value="Zuba">Zuba</option>
+					<option value="Madalla">Madalla</option>
+					<option value="Suleja">Suleja</option>
 					</select>
 					<?php
 

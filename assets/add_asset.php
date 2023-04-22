@@ -75,25 +75,6 @@ if (check_login($data)) {
         }
 	}
 
-?>
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<meta name="keyword" content="" />
-		<meta name="description" content="" />
-		<meta name="author" content="Young Sam" />
-		<meta http-equiv="X-UA-Compatible" content="ie=edge" />
-		<link rel="stylesheet" type="text/css" href="../stylesheets/style.css" />
-		<link rel="stylesheet" type="text/css" href="../stylesheets/w3.css" />
-		<title>Dashboard</title>
-	</head>
-
-<body>
-
-	<!--=== NAVBAR ===-->
-	<?php
 
 		include 'header.php';
 	?>
@@ -153,12 +134,14 @@ if (check_login($data)) {
 				<div class="w3-margin-top">
             <select id="" name="category" class="w3-text-dark-grey w3-select">
               <option value="">Select category--</option>
+               <option value="Working Phone">Working Phone</option>
               <option value="Working Panel">Working Panel</option>
               <option value="LCD">Screen | LCD</option>
               <option value="Down board">Down Board</option>
               <option value="Camera">Camera</option>
                <option value="Sim Tray">Sim Tray</option>
               <option value="Finger Print">Finger Print</option>
+              <option value="Power flex">Power Flex</option>
               <option value="Others">Others</option>
             </select>
             <?php
@@ -218,6 +201,7 @@ if (check_login($data)) {
 				<div class="form-group">
 					<select name="condition">
 					<option value="">Condition</option>
+					<option value="Brand New(followCome)">Brand New(followcome)</option>
 					<option value="2nd Hand(followCome)">2nd Hand(followCome)</option>
 					<option value="Brand New(marketOwn)">Brand New(marketOwn)</option>
 					<option value="2nd Hand(MarketOwn)">2nd Hand(MarketOwn)</option>
